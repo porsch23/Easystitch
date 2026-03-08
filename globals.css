@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display';
+  --font-body: 'DM Sans';
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-cream-50 text-ink font-body antialiased;
+    font-size: 16px;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  /* Safe area padding for mobile notches */
+  .pb-safe {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  .pt-safe {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}
